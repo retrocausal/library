@@ -179,6 +179,7 @@ class Library {
       throw new Error("already exists");
     }
     book.lender = this.user.name;
+    book.requestedBy = false;
     this.commit(false, book);
     this.list();
   }
