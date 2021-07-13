@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  justify-content: flex-start;
+}
+header {
+  width: 100%;
+  background-color: lightsteelblue;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1vmin;
+  box-shadow: -2px 3px 6px rgba(0, 0, 0, 0.75);
+}
+header .left {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+header h1 {
+  margin: 0;
+  width: fit-content;
+  display: inline-flex;
+}
+header #user {
+  display: inline-flex;
+  padding: 0 1vmin;
+  width: fit-content;
+}
+header #login {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  transition: opacity 1s linear;
+}
+header #logout {
+  transition: opacity 1s linear;
+  width: fit-content;
+  padding: 1vmin;
+  margin: 0 1vmin;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+  border: none;
+  border-radius: 2.4pt;
+  position: absolute;
+  top: 0;
+}
+header #login label {
+  width: fit-content;
+  padding: 0 1vmin;
+}
+header #login input {
+  width: fit-content;
+  padding: 1vmin;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+  border: none;
+  border-radius: 2.4pt;
+}
+header #login button {
+  width: fit-content;
+  padding: 1vmin;
+  margin: 0 1vmin;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+  border: none;
+  border-radius: 2.4pt;
+}
+header .right {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-form,
+.logout-form {
+  opacity: 0;
+}
+
+footer {
+  width: 100%;
+  background-color: grey;
+}
+main {
+  background-color: lightslategrey;
+  width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  flex: 1 1 auto;
+}
+#library {
+  padding: 1vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hide {
+  opacity: 0;
+  z-index: 0;
+}
+.show {
+  opacity: 1;
+  z-index: 3;
+}
+
+.table {
+  width: 100%;
+  max-width: 750px;
+  opacity: 1;
+  z-index: 2;
+  max-height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  transform: rotate(0deg);
+  position: relative;
+  background-color: transparent;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  height: 48px;
+  z-index: 2;
+}
+.head {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  height: 48px;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  font-weight: bold;
+  background-color: lightsteelblue;
+}
+.cell {
+  flex-basis: min(150px, 20%);
+  max-width: min(150px, 20%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  font-variant: small-caps;
+  padding: 0 1vmin;
+}
+
+.actor {
+  padding: 1vmin;
+  border-radius: 2pt;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+  border: none;
+  width: fit-content;
+  background-color: lightsteelblue;
+}
+.add-input {
+  width: fit-content;
+  padding: 1vmin;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+  border: none;
+  border-radius: 2.4pt;
+}
+
+@media screen and (min-width: 750px) {
+  .table {
+    width: fit-content;
+  }
+  .cell {
+    width: 120px;
+  }
+  #library {
+    padding: 5vmin 2vmin;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #library {
+    padding: 10vmin 5vmin;
+  }
+  .cell {
+    width: 150px;
+  }
+}
