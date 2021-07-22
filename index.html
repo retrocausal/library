@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="images/key.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Library</title>
     <link rel="stylesheet" href="css/style.css" />
     <script type="module" src="js/init.js"></script>
+    <script type="module" src="js/ll.js"></script>
+    <script type="module" src="js/trees.js"></script>
+    <script type="module" src="js/heaps.js"></script>
+    <script src="js/polyfills.js"></script>
   </head>
   <body>
     <header>
@@ -24,7 +29,59 @@
     </header>
     <main>
       <section id="library"></section>
+      <div id="carousel" class="carousel">
+        <button class="arrow prev">⇦</button>
+        <div class="gallery">
+          <ul class="images">
+            <li><img src="https://en.js.cx/carousel/1.png" /></li>
+            <li><img src="https://en.js.cx/carousel/2.png" /></li>
+            <li><img src="https://en.js.cx/carousel/3.png" /></li>
+            <li><img src="https://en.js.cx/carousel/4.png" /></li>
+            <li><img src="https://en.js.cx/carousel/5.png" /></li>
+            <li><img src="https://en.js.cx/carousel/6.png" /></li>
+            <li><img src="https://en.js.cx/carousel/7.png" /></li>
+            <li><img src="https://en.js.cx/carousel/8.png" /></li>
+            <li><img src="https://en.js.cx/carousel/9.png" /></li>
+            <li><img src="https://en.js.cx/carousel/10.png" /></li>
+          </ul>
+        </div>
+        <button class="arrow next">⇨</button>
+      </div>
     </main>
-    <footer></footer>
+    <footer>
+      <script>
+        console.log(
+          document.getElementsByTagName("li"),
+          typeof document.getElementsByTagName("li")
+        );
+        console.log(
+          document.querySelectorAll("li"),
+          typeof document.querySelectorAll("li")
+        );
+        (function () {
+          let left = 0;
+          let right = 0;
+          const imgW = 150;
+          const images = carousel.querySelectorAll("li");
+          const minLeftMargin = 0;
+          const maxRightMargin = -1 * (images.length - 2) * imgW;
+          let marginLeft = 0;
+          document.addEventListener("DOMContentLoaded", function () {
+            const rightArrow = carousel.querySelector(".next");
+            const leftArrow = carousel.querySelector(".prev");
+            rightArrow.addEventListener("click", function () {
+              right++;
+              if (marginLeft > maxRightMargin) marginLeft -= right * imgW;
+              carousel.querySelector(
+                ".images"
+              ).style.marginLeft = `${marginLeft}px`;
+            });
+            leftArrow.addEventListener("click", function () {
+              left++;
+            });
+          });
+        })();
+      </script>
+    </footer>
   </body>
 </html>

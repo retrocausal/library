@@ -199,3 +199,40 @@ main {
     width: 150px;
   }
 }
+
+.carousel {
+  width: 100%;
+  max-width: 450px;
+  height: 200px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  background-color: #eee;
+}
+.gallery {
+  width: 300vw;
+  overflow: hidden;
+}
+.gallery img {
+  max-width: 150px;
+  max-height: 150px;
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  min-height: 150px;
+}
+.gallery .images {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.gallery li {
+  width: fit-content;
+}
+.arrow {
+  border: none;
+  cursor: pointer;
+}
+.arrow:hover {
+  background-color: #ccc;
+}
